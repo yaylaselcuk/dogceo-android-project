@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yaylas.dogceo.ui.home.HomeFragment"
+        android:label="Dog Ceo" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.yaylas.dogceo.ui.detail.DetailFragment"
+        android:label="Details" >
+        <argument
+            android:name="parent_breed"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="breed_name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_detailFragment_to_innerDetailFragment"
+            app:destination="@id/innerDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/innerDetailFragment"
+        android:name="com.yaylas.dogceo.ui.detail.DetailFragment"
+        android:label="Details">
+        <argument
+            android:name="parent_breed"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="breed_name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
